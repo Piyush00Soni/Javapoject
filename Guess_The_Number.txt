@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class GuessNumber {
+    static int guessNumber(int random_no){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int t = 0;
+        while(n!=random_no){
+            if(n>random_no){
+                System.out.println("Guess number is bigger ");
+                n = sc.nextInt();
+            }
+            else if(n<random_no){
+                System.out.println("Guess number is lower ");
+                n = sc.nextInt();
+            }
+            else{
+                System.out.println("guess a number");
+            }
+            t++;
+        }
+        System.out.println("Hey!!! You Win... Guess number "+n+" is matched with random no "+random_no+".You Completed the game in "+t+" chances");
+        return 0;
+    }
+    public static void main(String[] args) {
+        int random_no = (int)Math.round((Math.random()*19)+1);
+        System.out.println("Guess The Number Between 1 To 20");
+        guessNumber(random_no);
+    }
+}
